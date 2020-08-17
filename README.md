@@ -7,7 +7,7 @@ Prior to 2017 (e.g. Cache 2010) the wsse security header was not required.  CSP 
 service definition language xml file.  You will see references to these in the urls below.
 Finally, the connected services can be generated directly from Microsoft Visual Studio (I use Visual Studio community edition 2019 version: 16.6.2, anything beyond 10.0 is fine ?). 
 Open the solution explorer, select the csproj file (below the solution file), right click select Add\service reference\enter the web service url in the address bar 
-(similar to the following: http://$YOURERVERNAME:8972/csp/AVPM/WEBSVC.UserManagement.cls?WSDL=1), rename the name space appropriately, and select GO.  This will 
+(similar to the following: http://$YOURAVATARSERVER:8972/csp/AVPM/WEBSVC.UserManagement.cls?WSDL=1), rename the name space appropriately, and select GO.  This will 
 generate all of the connected services files.  Note as below, replace $YOURSERVERNAME WITH the name of your Avatar instance.
 Good luck, it's straight forward if you follow all steps above and below.
 two quick updates to program.cs:
@@ -71,7 +71,7 @@ PS C:\Z_AVATOOL_Template> gci -Recurse *.*|ForEach-Object{
 >> Get-Content $_.Fullname |Select-String "YOURAVATARSERVER"
 >> }
 
-The files to change in the AVATROOL\connected services\UserManagement folder are: References.cs, Configuration.svcinfo, Configuration91.svcinfo, Reference.svcmap, WEBSRC.wsdl, 
+The files to change in the AVATOOL\connected services\UserManagement folder are: References.cs, Configuration.svcinfo, Configuration91.svcinfo, Reference.svcmap, WEBSRC.wsdl, 
 note it's much easier (and better) to simply delete the folder and it's contents and add the service reference for your avatar server from visual studio, from the solution explorer, 
 select the csproj, right click, Add, Service Reference.  Also don't forget to update AVATOOL\app.config (replace $YOURAVATARSERVER with your avatar server instance, live, sbox, or uat 
 for testing).  I used MSVS2019.
